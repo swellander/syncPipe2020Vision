@@ -31,7 +31,7 @@ const aSyncPipe = (str, fn) => {
 
   operations[cmdArr[0]](null, cmdArr[1], function (err, arg) {
     if (err) throw err;
-    
+
 
   }
 
