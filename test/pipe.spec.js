@@ -1,4 +1,5 @@
 const syncPipe = require('../sync');
+const aSyncPipe = require('../async');
 const expect = require('chai').expect;
 
 describe('syncPipe function', () => {
@@ -16,5 +17,15 @@ describe('syncPipe function', () => {
 
   it('takes multiple commands', () => {
     expect(syncPipe('set 1 | mult 10 | mult 4 | add 2')).to.eql(42);
+  })
+})
+
+describe('aSyncPipe function', () => {
+  it('exists', () => {
+    expect(aSyncPipe).to.be.ok;
+  });
+
+  it('sets first command to argument', () => {
+    expect(aSyncPipe('set 0')).to.eql(0);
   })
 })
